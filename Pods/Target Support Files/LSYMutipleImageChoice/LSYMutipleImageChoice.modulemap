@@ -1,0 +1,6 @@
+framework module LSYMutipleImageChoice {
+  umbrella header "LSYMutipleImageChoice-umbrella.h"
+
+  export *
+  module * { export * }
+}

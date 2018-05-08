@@ -1,0 +1,134 @@
+//
+//  minglong.pch
+//  minglongyongche
+//
+//  Created by jiamanu on 2018/3/29.
+//  Copyright © 2018年 minglongkeji. All rights reserved.
+//
+
+#ifndef minglong_h
+#define minglong_h
+
+//框架
+#import <PureLayout/PureLayout.h>
+#import <RETableViewManager/RETableViewManager.h>
+#import <AFNetworking/AFNetworking.h>
+#import <MJRefresh/MJRefresh.h>
+#import <MJExtension/MJExtension.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+//#import <WXApi.h>
+
+//#import <MBProgressHUD/MBProgressHUD.h>
+
+
+//类
+#import "UIButton+Block.h"
+#import "UIButton+Addition.h"
+#import "NSString+Attribute.h"
+#import "UIViewController+Blur.h"
+#import "UIViewController+HUD.h"
+
+
+//block弱引用
+#define MLWeakWithNameAndObject(_obj,_name) __weak typeof(_obj) weak##_name = _obj
+#define MLWeak(_obj) MLWeakWithNameAndObject(_obj,_obj)
+#define MLWeakSelf MLWeak(self)
+
+//色值
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define MLRedColor [UIColor redColor]
+#define MLBlueColor [UIColor colorWithRed:88/255 green:205/255 blue:145/255 alpha:1]
+#define MLBlackColor UIColorFromRGB(0x000000)
+#define MLLightGrayColor UIColorFromRGB(0x999999)
+#define MLGrayColor  UIColorFromRGB(0x666666)
+#define MLWhiteColor  UIColorFromRGB(0xffffff)
+//#define MLDrakGrayColor [UIColor darkGrayColor]
+#define MLDrakGrayColor UIColorFromRGB(0x333333)
+#define MLOrangeColor UIColorFromRGB(0xff5722)
+#define MLGGColor UIColorFromRGB(0xbfbfbf)
+
+#define MLLoginColor  [UIColor colorWithRed:0.0392 green:0.0941 blue:0.1529 alpha:1]
+#define MLBackGroundColor  [UIColor colorWithRed:0.9647 green:0.9647 blue:0.9647 alpha:1]
+
+//font
+#define MLFont [UIFont systemFontOfSize:14]
+#define MLFont1 [UIFont systemFontOfSize:10]
+#define MLFont2 [UIFont systemFontOfSize:18]
+#define MLFont3 [UIFont systemFontOfSize:12]
+#define MLFont4 [UIFont systemFontOfSize:16]
+#define MLFont5 [UIFont systemFontOfSize:15]
+#define MLFont7 [UIFont systemFontOfSize:17]
+#define MLFont8 [UIFont systemFontOfSize:13]
+#define MLFont9 [UIFont systemFontOfSize:19]
+
+
+
+
+//radius
+#define MLRadius 3
+
+
+//spacing
+#define smallSpacing 10
+#define middleSpacing 15
+#define bigSpacing 20
+#define loginSpace 30
+
+#define MLCellHeight 50 //单元格普遍高度
+
+#define MLWindowWidth [UIScreen mainScreen].bounds.size.width
+
+//单元格无分割线
+#define MLSeparatorInset UIEdgeInsetsMake(0, MLWindowWidth, 0, 0)
+
+//友盟
+#define appkey @"5ac3472df29d983a910000b5"  //
+
+
+#define TOKEN  [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
+
+//API
+//#define MLBaseUrl @"http://test.jiamanu.com/"
+#define MLBaseUrl @"http://api.mlong88.vip/"
+
+
+
+
+#define MLShortRentList @"leaseapi/index"   //短租列表
+#define MLShortRentCondition @"leaseapi/solor/"  //短租查询条件
+#define MLCarDetailOfShortRent @"leaseapi/cshow/"  //短租车详情
+
+
+#define MLLogin @"leaseapi/login"  //登录
+#define MlLoginCode @"leaseapi/sendcode" //发送验证码
+#define MLRegisterAgreenment  @"leaseapi/sm"  //注册协议
+
+#define MLCollectionOfAdd @"member_api/addcollect/"  //添加收藏
+#define MLCollectionOfCancel @"member_api/delcollect/"  //取消收藏
+#define MLCollectionOfList @"member_api/collect/"  //收藏列表
+
+#define MLOrderOfGenerate @"member_api/addorder/"  //生成订单
+#define MLOrderOfList @"member_api/order/"  //订单列表
+#define MLMyOrderOfDetail @"member_api/showorder/"  //订单详情
+#define MLMyOrderOfDelete @"member_api/delorder/"  //删除订单
+#define MLMyOrderOfCancel @"member_api/uporder/" //取消订单
+#define MLPay @"member_api/pay/"   //支付
+#define MLPayResult @"member_api/showorder/"  //支付结果
+
+#define MLNewsOfList @"member_api/message/"  //消息列表 || 读取消息
+//#define MLNewsOfRead @"member_api/message"  //
+
+
+#define MLMainHotList @"leaseapi/hot"  //首页活动列表
+
+#define MLAuthenty @"member_api/idcard/" //认证
+#define MLUploadImage @"member_api/upload/"  //上传身份证
+#define MLAbout @"leaseapi/about"    //关于鸣垄
+
+
+#define MLMyTicket @"member_api/tickets/"  //优惠券
+
+#endif /* minglong_h */
